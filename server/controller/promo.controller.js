@@ -29,6 +29,7 @@ module.exports.getPromo = async (req, res) => {
         // const promoCode=req.query.promoCode
         // const data = await promoCode.findOne({ where: { promo_code: promoCode} })
         const promoCodeVal = req.query.promoCode
+        console.log("promo" , promoCodeVal)
         const data = await promoCode.findOne({ where: { promo_code: promoCodeVal } })
         return res.status(200).json({ success: true, message: "promo code fetch", data: data })
     } catch (error) {

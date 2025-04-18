@@ -5,8 +5,8 @@ const {authMiddlewear} = require("../middlewear/jwt.middlewear")
 const {authorizeRole} =require("../middlewear/authRole.middlewear")
 
 
-route.post("/add-Promo", controller.addPromo)
+route.post("/add-promo", controller.addPromo)
 
-route.get("/getPromo",authMiddlewear ,authorizeRole(["user"]), controller.getPromo)
+route.get("/get-promo",authMiddlewear ,authorizeRole(["user"]), controller.getPromo)
 
 module.exports=route

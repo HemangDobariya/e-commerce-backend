@@ -9,5 +9,5 @@ route.post("/register",controller.register)
 
 // login 
 route.post("/login",controller.login)
-route.get("/show-Product",  authMiddlewear,authorizeRole(["user"]), controller2.showProduct)
+route.get("/show-product",  authMiddlewear,authorizeRole(["user"]), controller2.showProduct)
 module.exports=route 

@@ -8,7 +8,8 @@ const path = require("path")
 module.exports.addProduct = async (req, res) => {
     console.log("File received:", req.file);
     const list = {
-        seller_id:req.body.seller_id,
+        // seller_id:req.body.seller_id,
+        seller_id:req.user.id,
         quentity: req.body.quentity,
         title: req.body.title,
         price: req.body.price,
@@ -69,7 +70,8 @@ module.exports.showSellerProduct = async (req, res) => {
 
         const pageAsNumber = Number.parseInt(req.query.page);
         const sizeAsNumber = Number.parseInt(req.query.size);
-        const id =req.query.id;
+        // const id =req.query.id;
+        const id = req.user.id
         console.log("id",id)
         let page = 0;
         if (!Number.isNaN(pageAsNumber)) {

@@ -20,7 +20,7 @@ const upload = multer({
     storage: storage
 })
 
-route.post("/add-Product",authMiddlewear , authorizeRole(["seller"]) ,upload.single("file") ,controller.addProduct)
+route.post("/add-product",authMiddlewear , authorizeRole(["seller"]) ,upload.single("file") ,controller.addProduct)
 
 
 

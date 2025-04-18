@@ -8,7 +8,8 @@ const address = db.userAddress
 module.exports.addShipAddress = async (req, res) => {
     try {
         const list = {
-            user_id: req.body.user_id,
+            // user_id: req.body.user_id,
+            user_id: req.user.id,
             shipping_address: req.body.shipping_address,
             country: req.body.country,
             city: req.body.city,
@@ -32,8 +33,8 @@ module.exports.addShipAddress = async (req, res) => {
 
 module.exports.getUserAddress = async (req, res) => {
     try {
-        const id = req.query.user_id
-
+        // const id = req.query.user_id
+const id = req.user.id
         const data = await address.findAll({ where: { user_id: id } })
         return res.status(200).json({ status: 200, message: "get user address", data: data })
 
