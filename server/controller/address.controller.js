@@ -7,6 +7,7 @@ const address = db.userAddress
 
 module.exports.addShipAddress = async (req, res) => {
     try {
+        console.log("user",req.user)
         const list = {
             // user_id: req.body.user_id,
             user_id: req.user.id,

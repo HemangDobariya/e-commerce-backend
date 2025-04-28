@@ -54,7 +54,7 @@ module.exports.login = async (req, res) => {
         }
 
         const token = await jwt.sign(payload, "secrate", { expiresIn: "1h" })
-        return res.status(200).json({ status: 200, message: `${emailvalid.role} is successfully logIn`, data: { token: token, role: emailvalid.role, id: emailvalid.user_id } })
+        return res.status(200).json({ status: 200, message: `${emailvalid.role} is successfully login`, data: { token: token, role: emailvalid.role, id: emailvalid.user_id } })
     } catch (error) {
         res.status(400).json({ status: 400, suceess: false, message: error.message , data:null})
     }

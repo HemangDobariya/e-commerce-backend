@@ -15,7 +15,6 @@ module.exports.addPromo = async (req, res) => {
         const promo = await promoCode.create(list)
         return res.status(200).json({ status: 200, sucess: true, message: "promoCode added" })
 
-
     } catch (error) {
         return res.status(400).json({ status: 400, sucess: false, message: error.message })
     }
